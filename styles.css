@@ -35,7 +35,6 @@ body {
   padding: 20px;
 }
 
-
 .neon-header {
   text-align: center;
   padding: 40px 0;
@@ -44,8 +43,8 @@ body {
 }
 
 .neon-header h1 {
-  font: 1em serif;
-  font-size: 4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 600;
   color: var(--primary-color);
   text-transform: uppercase;
@@ -163,6 +162,7 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+  animation: pulse 2s infinite;
 }
 
 .neon-btn::before {
@@ -180,6 +180,7 @@ body {
   background-color: var(--primary-color);
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 168, 255, 0.4);
+  text-shadow: 0 0 5px #fff, 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
 }
 
 .neon-btn:hover::before {
@@ -205,6 +206,7 @@ body {
   display: flex;
   align-items: center;
   transition: var(--transition);
+  animation: float 6s ease-in-out infinite;
 }
 
 .info-item:hover {
@@ -236,40 +238,58 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .neon-header h1 {
-      font-size: 3rem;
+    font-size: 3rem;
+    letter-spacing: 3px;
   }
-  
+
   .hero-section h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
-  
+
   .fest-date {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
-  
+
   .button-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
-  
+
   .fest-info {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
-/* Animation for buttons */
+@media (max-width: 480px) {
+  .neon-header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-section h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Animations */
 @keyframes pulse {
   0% {
-      box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.4);
+    box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.4);
   }
   70% {
-      box-shadow: 0 0 0 10px rgba(0, 168, 255, 0);
+    box-shadow: 0 0 0 10px rgba(0, 168, 255, 0);
   }
   100% {
-      box-shadow: 0 0 0 0 rgba(0, 168, 255, 0);
+    box-shadow: 0 0 0 0 rgba(0, 168, 255, 0);
   }
 }
 
-.neon-btn {
-  animation: pulse 2s infinite;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
+
