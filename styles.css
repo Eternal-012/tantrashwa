@@ -46,7 +46,7 @@ body {
 .neon-header h1 {
   font: 1em serif;
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 5px;
