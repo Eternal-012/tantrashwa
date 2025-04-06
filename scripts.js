@@ -14,27 +14,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function openLink(buttonNumber) {
     const links = {
-        1: "https://forms.gle/example1",
-        2: "https://forms.gle/example2",
-        3: "https://forms.gle/example3",
-        4: "https://forms.gle/example4",
-        5: "https://forms.gle/example5",
-        6: "https://forms.gle/example6",
-        7: "https://forms.gle/example7",
-        8: "https://forms.gle/example8",
-        9: "https://forms.gle/example9",
-        10: "https://forms.gle/example10",
-        11: "https://forms.gle/example11",
-        12: "https://forms.gle/example12",
-        13: "https://forms.gle/example13",
-        14: "https://forms.gle/example14",
-        15: "https://forms.gle/example15",
-        16: "https://forms.gle/example16",
-        17: "https://forms.gle/example17",
-        18: "https://forms.gle/example18",
-        19: "https://forms.gle/example19",
-        20: "https://forms.gle/example20",
-        21: "https://forms.gle/example21"
+        1: "#",
+        2: "#",
+        3: "#",
+        4: "#",
+        5: "#",
+        6: "#", 
+        7: "#",
+        8: "#", 
+        9: "#",
+       10: "#", 
+       11: "#",
+       12: "#", 
+       13: "#",
+       14: "#",  
+       15: "#",
+       16: "#", 
+       17: "#",
+       18: "#",
+       19: "#",
+       20: "#",
+       21: "#" 
     };
 
     const url = links[buttonNumber];
