@@ -7,11 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100vh;
       overflow: hidden;
-      height: 100%;
       background: linear-gradient(to bottom, #0c0202, #000000);
     }
 
@@ -21,7 +21,7 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
-      font-family: 'Audiowide',cursive;
+      font-family: 'Audiowide', cursive;
       font-size: 18px;
       color: white;
       text-decoration: none;
@@ -36,10 +36,13 @@
     }
 
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       border: none;
-      width: 100%;
-      height: 110%;
-      margin-top: -3px;
+      clip-path: inset(0px 0px 60px 0px); /* Crops the bottom part to hide the watermark */
     }
   </style>
 </head>
