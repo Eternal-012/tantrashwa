@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>tantrashwa - Minimalist</title>
+  <title>Tantra Ashwa</title>
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -22,10 +23,40 @@
       color: white;
       overflow: hidden;
       position: relative;
-      /* Subtle gradient background */
       background: linear-gradient(135deg, #1a0505, #0c0202, #050101);
       background-size: 400% 400%;
       animation: subtleGradient 15s ease infinite;
+    }
+
+    .code-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.15;
+      overflow: hidden;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 20px;
+      color: #ff3366;
+      white-space: pre;
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+
+    .typing-line {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .background {
@@ -63,11 +94,21 @@
       animation-delay: 4s;
     }
 
+    #canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.8;
+    }
+
     .content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       text-align: center;
-      padding: 40px 20px; /* Increased padding for more space */
+      padding: 40px 20px;
     }
 
     .title {
@@ -165,6 +206,7 @@
   </style>
 </head>
 <body>
+  <div class="code-background" id="codeBackground"></div>
   <div class="background">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -177,6 +219,53 @@
   </div>
 
   <script>
+    const javaCode = `public class Registration {
+    public static void main(String[] args) {
+        // Initialize registration system
+        RegistrationSystem system = new RegistrationSystem();
+        
+        // Create new user
+        User newUser = new User();
+        
+        // Set user details
+        newUser.setUsername("participant");
+        newUser.setEvent("TantraAshwa2.0");
+        
+        try {
+            // Attempt registration
+            boolean success = system.register(newUser);
+            
+            if (success) {
+                System.out.println("Register Now!");
+                System.out.println("Join the Competition!");
+            }
+        } catch (Exception e) {
+            System.err.println("Don't miss out!");
+        }
+    }
+}`;
+
+    const codeBackground = document.getElementById('codeBackground');
+    const lines = javaCode.split('\n');
+    
+    function typeCode() {
+      codeBackground.innerHTML = ''; // Clear previous content
+      lines.forEach((line, index) => {
+        const lineElement = document.createElement('div');
+        lineElement.className = 'typing-line';
+        lineElement.textContent = line;
+        lineElement.style.animationDelay = `${index * 0.1}s`;
+        codeBackground.appendChild(lineElement);
+      });
+    }
+
+    // Initial typing
+    typeCode();
+
+    // Retype code every 10 seconds
+    setInterval(typeCode, 10000);
+
+    // Existing click handlers
     document.addEventListener('dblclick', function() {
       window.location.href = "register.html";
     });
@@ -193,3 +282,4 @@
   </script>
 </body>
 </html>
+
