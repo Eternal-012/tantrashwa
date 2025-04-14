@@ -23,7 +23,7 @@
       transform: translateX(-50%);
       z-index: 10;
       font-family: 'Audiowide', cursive;
-      font-size: 10px;
+      font-size: 8px;
       color: white;
       background: rgba(0, 0, 0, 0.6);
       padding: 10px 20px;
@@ -68,17 +68,17 @@
 
   <script>
     const overlay = document.getElementById('interactionOverlay');
+    let lastTapTime = 0;
 
-    let lastTap = 0;
     overlay.addEventListener('touchend', function () {
       const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
+      const tapDuration = currentTime - lastTapTime;
 
-      if (tapLength < 500 && tapLength > 0) {
+      if (tapDuration < 500 && tapDuration > 0) {
         window.location.href = "register.html";
       }
 
-      lastTap = currentTime;
+      lastTapTime = currentTime;
     });
 
     overlay.addEventListener('dblclick', function () {
