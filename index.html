@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>tantrashwa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #0c0202, #000000);
+    }
+
+    .registration-link {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-family: 'Audiowide', cursive;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .registration-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    iframe {
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 40px);
+      border: none;
+      z-index: 0;
+    }
+
+    @media (max-width: 620px) {
+      iframe {
+        top: -3px;
+        height: calc(100% + 60px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="register.html" class="registration-link">REGISTRATION</a>
+
+  <iframe src="https://my.spline.design/distortingtypography-sPILXwlmsgO5OSnn8Sia8YMV/" allowfullscreen></iframe>
+
+  <!-- Overlay to hide "Built with Spline" -->
+  <div class="watermark-hide"></div>
+
+</body>
+</html>
