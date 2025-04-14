@@ -16,24 +16,20 @@
       background: linear-gradient(to bottom, #0c0202, #000000);
     }
 
-    .registration-link {
+    .info-text {
       position: absolute;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
       font-family: 'Audiowide', cursive;
-      font-size: 18px;
+      font-size: 10px;
       color: white;
-      text-decoration: none;
       background: rgba(0, 0, 0, 0.6);
       padding: 10px 20px;
       border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .registration-link:hover {
-      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+      user-select: none;
     }
 
     iframe {
@@ -46,6 +42,16 @@
       z-index: 0;
     }
 
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 5;
+      background: transparent;
+    }
+
     @media (max-width: 620px) {
       iframe {
         top: -3px;
@@ -56,12 +62,29 @@
 </head>
 <body>
 
-  <a href="register.html" class="registration-link">REGISTRATION</a>
-
+  <div class="info-text">Double tap on screen</div>
+  <div class="overlay" id="interactionOverlay"></div>
   <iframe src="https://my.spline.design/distortingtypography-w9MZdiRGuqdVxwaNqMiwR8R5/" allowfullscreen></iframe>
 
-  <!-- Overlay to hide "Built with Spline" -->
-  <div class="watermark-hide"></div>
+  <script>
+    const overlay = document.getElementById('interactionOverlay');
+
+    let lastTap = 0;
+    overlay.addEventListener('touchend', function () {
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTap;
+
+      if (tapLength < 500 && tapLength > 0) {
+        window.location.href = "register.html";
+      }
+
+      lastTap = currentTime;
+    });
+
+    overlay.addEventListener('dblclick', function () {
+      window.location.href = "register.html";
+    });
+  </script>
 
 </body>
 </html>
