@@ -113,40 +113,40 @@
 
     .title {
       font-family: 'Audiowide', cursive;
-      font-size: 4.5em; /* Slightly larger */
-      margin-bottom: 30px; /* Increased margin */
+      font-size: 4.5em;
+      margin-bottom: 30px; 
       background: linear-gradient(45deg, #ff3366, #ff0000);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: glow 3s ease-in-out infinite alternate; /* Slightly slower glow */
+      animation: glow 3s ease-in-out infinite alternate; 
     }
 
     .subtitle {
-      font-size: 1.6em; /* Slightly larger */
-      margin-bottom: 50px; /* Increased margin */
-      opacity: 0.85; /* Slightly adjusted opacity */
-      font-weight: 400; /* Lighter weight for contrast */
+      font-size: 1.6em;
+      margin-bottom: 50px;
+      opacity: 0.85; 
+      font-weight: 400; 
     }
 
     .cta-button {
-      padding: 18px 45px; /* Slightly larger padding */
-      font-size: 1.1em; /* Slightly smaller font size */
+      padding: 18px 45px;
+      font-size: 1.1em; 
       background: linear-gradient(45deg, #ff3366, #ff0000);
       border: none;
-      border-radius: 50px; /* More rounded */
+      border-radius: 50px;
       color: white;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
       font-family: 'Rajdhani', sans-serif;
-      font-weight: 700; /* Bold weight */
-      letter-spacing: 2.5px; /* Increased spacing */
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.15); /* Subtler shadow */
+      font-weight: 700;
+      letter-spacing: 2.5px; 
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.15);
     }
 
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25); /* Slightly enhanced hover shadow */
-      background: linear-gradient(45deg, #ff4d79, #ff1a1a); /* Slightly brighter on hover */
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25); 
+      background: linear-gradient(45deg, #ff4d79, #ff1a1a); 
     }
 
     @keyframes pulse {
@@ -246,10 +246,9 @@
 }`;
 
     const codeBackground = document.getElementById('codeBackground');
-    const lines = javaCode.split('\n');
-    
+    const lines = javaCode.split('\n');  
     function typeCode() {
-      codeBackground.innerHTML = ''; // Clear previous content
+      codeBackground.innerHTML = ''; 
       lines.forEach((line, index) => {
         const lineElement = document.createElement('div');
         lineElement.className = 'typing-line';
@@ -258,14 +257,8 @@
         codeBackground.appendChild(lineElement);
       });
     }
-
-    // Initial typing
     typeCode();
-
-    // Retype code every 10 seconds
     setInterval(typeCode, 10000);
-
-    // Existing click handlers
     document.addEventListener('dblclick', function() {
       window.location.href = "register.html";
     });
