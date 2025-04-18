@@ -68,6 +68,13 @@
       padding: 20px;
     }
 
+    .title {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      animation: pulseText 2s infinite;
+      color: #ff4d79;
+    }
+
     .timer {
       font-size: 2em;
       display: flex;
@@ -109,8 +116,8 @@
     }
 
     @media (max-width: 600px) {
-      .coming-soon {
-        font-size: 2em;
+      .title {
+        font-size: 1.5em;
       }
       .timer {
         font-size: 1.3em;
@@ -129,12 +136,13 @@
   </div>
 
   <div class="content">
+    <div class="title">Registration starts from</div>
     <div class="timer" id="countdown"></div>
   </div>
 
   <script>
     const countdownEl = document.getElementById("countdown");
-    const targetDate = new Date("2025-04-21T10:30:00").getTime();
+    const targetDate = new Date("2025-04-21T10:30:00").getTime(); // Countdown set to 21st April 2025 10:30 AM
 
     function updateCountdown() {
       const now = new Date().getTime();
