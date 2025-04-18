@@ -114,23 +114,23 @@
     .title {
       font-family: 'Audiowide', cursive;
       font-size: 4.5em;
-      margin-bottom: 30px; 
+      margin-bottom: 30px;
       background: linear-gradient(45deg, #ff3366, #ff0000);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: glow 3s ease-in-out infinite alternate; 
+      animation: glow 3s ease-in-out infinite alternate;
     }
 
     .subtitle {
       font-size: 1.6em;
-      margin-bottom: 50px;
-      opacity: 0.85; 
-      font-weight: 400; 
+      margin-bottom: 40px;
+      opacity: 0.85;
+      font-weight: 400;
     }
 
     .cta-button {
       padding: 18px 45px;
-      font-size: 1.1em; 
+      font-size: 1.1em;
       background: linear-gradient(45deg, #ff3366, #ff0000);
       border: none;
       border-radius: 50px;
@@ -139,14 +139,14 @@
       transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
       font-family: 'Rajdhani', sans-serif;
       font-weight: 700;
-      letter-spacing: 2.5px; 
+      letter-spacing: 2.5px;
       box-shadow: 0 5px 15px rgba(255, 0, 0, 0.15);
     }
 
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25); 
-      background: linear-gradient(45deg, #ff4d79, #ff1a1a); 
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25);
+      background: linear-gradient(45deg, #ff4d79, #ff1a1a);
     }
 
     @keyframes pulse {
@@ -259,20 +259,12 @@
     }
     typeCode();
     setInterval(typeCode, 10000);
+
     document.addEventListener('dblclick', function() {
       window.location.href = "register.html";
-    });
-
-    let lastTap = 0;
-    document.addEventListener('touchend', function(event) {
-      const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
-      if (tapLength < 500 && tapLength > 0) {
-        window.location.href = "register.html";
-      }
-      lastTap = currentTime;
     });
   </script>
 </body>
 </html>
+
 
