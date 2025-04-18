@@ -218,49 +218,51 @@
     <button class="cta-button" onclick="window.location.href='ComingSoon.html'">registerUser()</button>
   </div>
 
-  <script>
-    const javaCode = `public class Registration {
-    public static void main(String[] args) {
-        // Initialize registration system
-        RegistrationSystem system = new RegistrationSystem();
-        
-        // Create new user
-        User newUser = new User();
-        
-        // Set user details
-        newUser.setUsername("participant");
-        newUser.setEvent("TantraAshwa2.0");
-        
-        try {
-            // Attempt registration
-            boolean success = system.register(newUser);
-            
-            if (success) {
-                System.out.println("Register Now!");
-                System.out.println("Join the Competition!");
-            }
-        } catch (Exception e) {
-            System.err.println("Don't miss out!");
-        }
-    }
+
+<script>
+  const javaCode = `public class Registration {
+  public static void main(String[] args) {
+      // Initialize registration system
+      RegistrationSystem system = new RegistrationSystem();
+      
+      // Create new user
+      User newUser = new User();
+      
+      // Set user details
+      newUser.setUsername("participant");
+      newUser.setEvent("TantraAshwa2.0");
+      
+      try {
+          // Attempt registration
+          boolean success = system.register(newUser);
+          
+          if (success) {
+              System.out.println("Register Now!");
+              System.out.println("Join the Competition!");
+          }
+      } catch (Exception e) {
+          System.err.println("Don't miss out!");
+      }
+  }
 }`;
 
-    const codeBackground = document.getElementById('codeBackground');
-    const lines = javaCode.split('\n');  
-    function typeCode() {
-      codeBackground.innerHTML = ''; 
-      lines.forEach((line, index) => {
-        const lineElement = document.createElement('div');
-        lineElement.className = 'typing-line';
-        lineElement.textContent = line;
-        lineElement.style.animationDelay = `${index * 0.1}s`;
-        codeBackground.appendChild(lineElement);
-      });
-    }
-    typeCode();
-    setInterval(typeCode, 10000);
+  const codeBackground = document.getElementById('codeBackground');
+  const lines = javaCode.split('\n');  
+
+  function typeCode() {
+    codeBackground.innerHTML = ''; 
+    lines.forEach((line, index) => {
+      const lineElement = document.createElement('div');
+      lineElement.className = 'typing-line';
+      lineElement.textContent = line;
+      lineElement.style.animationDelay = `${index * 0.1}s`;
+      codeBackground.appendChild(lineElement);
     });
-  </script>
+  }
+
+  typeCode();
+  setInterval(typeCode, 10000);
+</script>
 </body>
 </html>
 
