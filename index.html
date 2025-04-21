@@ -123,12 +123,13 @@
 
     .subtitle {
       font-size: 1.6em;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       opacity: 0.85;
       font-weight: 400;
     }
 
     .cta-button {
+      margin-top: 30px;
       padding: 18px 45px;
       font-size: 1.1em;
       background: linear-gradient(45deg, #ff3366, #ff0000);
@@ -215,12 +216,12 @@
   <div class="content">
     <h1 class="title">TANTRASHWA 2.0</h1>
     <p class="subtitle">SAPTHAGIRI COLLEGE OF ENGINEERING</p>
+    <p class="subtitle">DEPARTMENT OF CSE</p>
     <button class="cta-button" onclick="window.location.href='register.html'">registerUser()</button>
   </div>
 
-
-<script>
-  const javaCode = `public class Registration {
+  <script>
+    const javaCode = `public class Registration {
   public static void main(String[] args) {
       // Initialize registration system
       RegistrationSystem system = new RegistrationSystem();
@@ -246,24 +247,23 @@
   }
 }`;
 
-  const codeBackground = document.getElementById('codeBackground');
-  const lines = javaCode.split('\n');  
+    const codeBackground = document.getElementById('codeBackground');
+    const lines = javaCode.split('\n');  
 
-  function typeCode() {
-    codeBackground.innerHTML = ''; 
-    lines.forEach((line, index) => {
-      const lineElement = document.createElement('div');
-      lineElement.className = 'typing-line';
-      lineElement.textContent = line;
-      lineElement.style.animationDelay = `${index * 0.1}s`;
-      codeBackground.appendChild(lineElement);
-    });
-  }
+    function typeCode() {
+      codeBackground.innerHTML = ''; 
+      lines.forEach((line, index) => {
+        const lineElement = document.createElement('div');
+        lineElement.className = 'typing-line';
+        lineElement.textContent = line;
+        lineElement.style.animationDelay = `${index * 0.1}s`;
+        codeBackground.appendChild(lineElement);
+      });
+    }
 
-  typeCode();
-  setInterval(typeCode, 10000);
-</script>
+    typeCode();
+    setInterval(typeCode, 10000);
+  </script>
 </body>
 </html>
-
 
